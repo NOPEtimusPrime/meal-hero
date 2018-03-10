@@ -1,0 +1,15 @@
+/.bundle
+log/
+/log/*
+/tmp/*
+tmp/
+!/log/.keep
+!/tmp/.keep
+/public/system
+/config/application.yml
+/config/database.yml
+/config/environments/development.rb
+/config/initializers/secret_token.rb
+/config/secrets.yml
+
+.byebug_history
