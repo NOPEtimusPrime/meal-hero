@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
 
   # GET /recipes
   # GET /recipes.json
-  def index
+  def index 
     @q = Recipe.ransack(params[:q])
     @recipes = @q.result(distinct: true)
   end
