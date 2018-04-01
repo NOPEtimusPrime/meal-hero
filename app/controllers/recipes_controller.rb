@@ -4,8 +4,13 @@ class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.json
   def index 
-    @q = Recipe.ransack(params[:q])
-    @recipes = @q.result(distinct: true)
+    if params[:qty]
+      @q = Recipe.ransack(params[:q])
+      @recipes = Recipe.limit(params[:qty]).order("RANDOM()")
+    else
+      @q = Recipe.ransack(params[:q])
+      @recipes = @q.result(distinct: true)
+    end
   end
 
   # GET /recipes/1

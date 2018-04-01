@@ -8,6 +8,13 @@
 	<%= f.submit "Search" %>
 <% end %>
 
+
+<%= form_with url: '/recipes', method: :get, local: true do |form| %>
+  <%= form.number_field :qty %>
+  <%= form.submit "Randomize" %>
+<% end %>
+
+
 <table>
   <thead>
     <tr>
