@@ -1,0 +1,35 @@
+$header_bg: $red;
+$nav_link: $white;
+$dropdown_bg: $red;
+
+header{
+	background-color: $header_bg;
+	a{
+		color: $nav_link;
+	}
+	ul{
+		list-style-type: none;
+		margin: 0;
+		li{
+			display: inline-block;
+			position: relative;
+			&:hover ul{
+				visibility: visible;
+			}
+			
+		}
+	}	
+	ul.level2{
+		visibility: hidden;
+		position: absolute;
+		background-color: $dropdown_bg;
+		left: -1rem;
+		li{
+			display: block;
+		}
+		a{
+			display: block;
+			padding: .5rem 1rem;
+		}
+	}
+}

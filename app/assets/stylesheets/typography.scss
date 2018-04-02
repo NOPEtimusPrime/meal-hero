@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Kadwa:700');
+
+a{
+	color: $red;
+	transition: color 0.5s;
+	&:hover{
+		color: $dark_tan;
+	}
+}
+
+h1{
+	font-family: 'Kadwa', serif;
+	color: $red;
+}
