@@ -18,16 +18,8 @@
 
 	<div class="grid-x grid-padding-x grid-padding-y">
 		<div class="cell small-12 medium-12 large-12">
-			<%= form_with url: '/recipes', method: :get, local: true do |form| %>
-			  <%= form.number_field :qty %>
-			  <%= form.submit "Randomize" %>
-			<% end %>
+			<%= link_to 'Add a new recipe', new_recipe_path %>
 		</div>
-	</div>
-
-
-	<div class="grid-x grid-padding-x grid-padding-y">
-		<div class="cell small-12 medium-12 large-12"><%= link_to 'Add a new recipe', new_recipe_path %>		</div>
 	</div>
 	
 	<div class="grid-x grid-padding-x grid-padding-y">

@@ -3,30 +3,37 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
 		<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
-
 		<%= stylesheet_link_tag    "application" %>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
 		<%= csrf_meta_tags %>
 		<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+		
 	</head>
 
 	<body>
+		
 		<header id="header">
 			<div class="grid-container">
 				<div class="grid-x grid-padding-x grid-padding-y">
 					<nav id="nav" class="cell small-12 medium-12 large-12">
 						<ul>
-							<li>
-								<a href="/recipes">My Recipes</a>
-							</li>
+							<li><a href="/recipes">My Recipes</a></li>
+							<li><a href="#" id="show_menu_form">Generate Menu</a></li>
 						</ul>
 					</nav>
 				</div>
 			</div>
 		</header>
-		<%= yield %>
+		
+		<div id="menu_form">
+			<%= render partial: 'recipes/menu_form' %>
+		</div>
+		
+		<main id="content">	
+			<%= yield %>
+		</main>
 
 	</body>
 </html>

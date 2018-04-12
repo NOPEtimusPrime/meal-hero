@@ -3,7 +3,7 @@
 a{
 	color: $red;
 	transition: color 0.5s;
-	&:hover{
+	&:hover, &:active, &:focus{
 		color: $dark_tan;
 	}
 }
@@ -11,4 +11,8 @@ a{
 h1{
 	font-family: 'Kadwa', serif;
 	color: $red;
+}
+
+label{
+	font-size: 1rem;
 }

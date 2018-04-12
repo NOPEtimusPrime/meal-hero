@@ -13,6 +13,9 @@ header{
 		li{
 			display: inline-block;
 			position: relative;
+			&:not(:first-child){
+				padding-left: 2rem;
+			}
 			&:hover ul{
 				visibility: visible;
 			}

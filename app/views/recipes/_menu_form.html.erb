@@ -1,0 +1,10 @@
+
+<div class="grid-x grid-padding-x grid-padding-y">
+	<div class="cell small-12 medium-12 large-12">
+		<%= form_with url: '/recipes', method: :get, local: true do |form| %>
+		  <%= form.label :qty, "How many meals?" %>
+		  <%= form.number_field :qty, min: 1 %>
+		  <%= form.submit "Randomize" %>
+		<% end %>
+	</div>
+</div>
