@@ -68,7 +68,10 @@ RSpec.describe RecipesController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        {name: 'Mongolian Beef'}
+        {
+          name: 'Mongolian Beef',
+          quick: true
+        }
       }
 
       it "updates the requested recipe" do
@@ -76,6 +79,7 @@ RSpec.describe RecipesController, type: :controller do
         put :update, params: {id: recipe.to_param, recipe: new_attributes}, session: valid_session
         recipe.reload
         expect(recipe.reload.name).to eq "Mongolian Beef"
+        expect(recipe.reload.quick).to eq true
       end
 
       it "redirects to the recipe" do

@@ -1,9 +1,24 @@
-<p id="notice"><%= notice %></p>
+<div id="recipe-detail" class="grid-container">
+	<div class="grid-x grid-padding-x">
+		<div class="cell small-12 medium-12 large-12">
+			<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @recipe.name %>
-</p>
+			<p>
+			  <strong>Name:</strong>
+			  <%= @recipe.name %>
+			</p>
+		</div>
+	</div>
+	<div class="grid-x grid-padding-x">
+		<div class="cell small-4 medium-2 large-2">
+			<span class="<%= @recipe.quick %>">Quick</span>
+		</div>
+	</div>
 
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<%= link_to 'Back', recipes_path %>
+	<div class="grid-x grid-padding-x">
+		<div class="cell small-12 medium-12 large-12">
+			<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+			<%= link_to 'Back', recipes_path %>
+		</div>
+	</div>
+</div>

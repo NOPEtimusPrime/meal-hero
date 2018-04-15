@@ -14,4 +14,8 @@ RSpec.describe Recipe, type: :model do
     expect(recipe.errors[:name]).to include("can't be blank")
   end
   
+  it "is valid when quick" do
+    recipe = FactoryGirl.build(:recipe, quick: true)
+  end
+  
 end

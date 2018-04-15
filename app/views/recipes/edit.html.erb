@@ -1,6 +1,14 @@
-<h1>Editing Recipe</h1>
+<div class="grid-container">
+	<div class="grid-x grid-padding-x grid-padding-y">
+		<h1>Editing Recipe</h1>
+	</div>
+</div>
 
 <%= render 'form', recipe: @recipe %>
 
-<%= link_to 'Show', @recipe %> |
-<%= link_to 'Back', recipes_path %>
+<div class="grid-container">
+	<div class="grid-x grid-padding-x grid-padding-y">
+		<%= link_to 'Show', @recipe %> |
+		<%= link_to 'Back', recipes_path %>
+	</div>
+</div>
