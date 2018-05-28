@@ -5,10 +5,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 		<%= stylesheet_link_tag    "application" %>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<%= csrf_meta_tags %>
-		<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 	</head>
 
 	<body>
@@ -34,5 +33,6 @@
 			<%= yield %>
 		</main>
 
+		<%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
 	</body>
 </html>

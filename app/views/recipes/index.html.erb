@@ -11,7 +11,7 @@
 		<div class="cell small-12 medium-12 large-12">
 			<%= search_form_for(@q) do |f| %>
 				<%= f.search_field :name_cont, :placeholder => "Search by name" %>
-				<%= f.submit "Search", :class => "fas fa-search" %>
+				<%= f.submit :search %>
 			<% end %>
 		</div>
 	</div>
