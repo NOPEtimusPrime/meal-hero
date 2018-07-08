@@ -9,7 +9,7 @@ class RecipesController < ApplicationController
       @recipes = Recipe.limit(params[:qty]).order("RANDOM()")
     else
       @q = Recipe.ransack(params[:q])
-      @recipes = @q.result(distinct: true)
+      @recipes = @q.result(distinct: true).order("NAME ASC")
     end
   end
 
