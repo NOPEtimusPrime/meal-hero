@@ -3,10 +3,20 @@ class RecipesController < ApplicationController
 
   # GET /recipes
   # GET /recipes.json
-  def index 
+  def index  
     if params[:qty]
+      qty_to_find = params[:qty].to_i
+      
+      quick_recipes = []
+      
+      if params[:quick_qty].to_i > 0
+        quick_recipes = Recipe.order("RANDOM()").where(:quick => true).limit(params[:quick_qty]) # warn if params[:quick_qty] > Recipe.where(:quick => true).size
+        qty_to_find = qty_to_find - (quick_recipes.size)
+      end
+                  
+      recipes = Recipe.order("RANDOM()").limit(qty_to_find)
+      @recipes = quick_recipes + recipes
       @q = Recipe.ransack(params[:q])
-      @recipes = Recipe.limit(params[:qty]).order("RANDOM()")
     else
       @q = Recipe.ransack(params[:q])
       @recipes = @q.result(distinct: true).order("NAME ASC")

@@ -4,6 +4,10 @@
 		<%= form_with url: '/recipes', method: :get, local: true do |form| %>
 		  <%= form.label :qty, "How many meals?" %>
 		  <%= form.number_field :qty, min: 1 %>
+		  
+		  <%= form.label :quick_qty, "How many of them should be quick?" %>
+		  <%= form.number_field :quick_qty, min: 1 %>
+		  
 		  <%= form.submit "Randomize" %>
 		<% end %>
 	</div>
